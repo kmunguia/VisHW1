@@ -27,5 +27,4 @@ class Food {
     this.monounsat = monounsat;
     this.polyunsat = polyunsat;
   }
-  
 }

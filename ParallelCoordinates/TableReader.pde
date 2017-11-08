@@ -7,11 +7,10 @@ class TableReader {
   ArrayList<Food> loadData() {
    Table table = loadTable("nutrients-cleaned.tsv", "header");
    ArrayList<Food> foodList = new ArrayList<Food>();
-   
+   ArrayList<String> nutrientList = new ArrayList<String>();
    
    for (int i = 0; i < table.getRowCount(); i++) {
      TableRow row = table.getRow(i);
-     
      String id = row.getString("id");
      String name = row.getString("name");
      String group = row.getString("group");
@@ -32,9 +31,9 @@ class TableReader {
 
      Food food = new Food(id, name, group, protein, calcium, sodium, fiber, vitaminc, potassium, carbohydrate, sugars, fat, water, calories, saturated, monounsat, polyunsat);
      foodList.add(food);
+     
    }
    return foodList;
    
   }
-   
- }
+}
