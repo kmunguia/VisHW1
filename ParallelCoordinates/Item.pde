@@ -3,10 +3,10 @@
   */ 
   
 class Item {
-  ArrayList StringVars;
-  ArrayList FloatVars;
+  ArrayList<String> StringVars;
+  ArrayList<Float> FloatVars;
 
-  Item(ArrayList StringVars, ArrayList FloatVars) {
+  Item(ArrayList<String> StringVars, ArrayList<Float> FloatVars) {
     this.StringVars = StringVars;
     this.FloatVars = FloatVars;
   }
