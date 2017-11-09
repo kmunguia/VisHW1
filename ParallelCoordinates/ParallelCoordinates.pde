@@ -6,7 +6,7 @@ void setup() {
   size(1400, 800);
   pixelDensity(displayDensity());
   data = new TableReader();
-  itemList = data.loadData("cars-cleaned.tsv");
+  itemList = data.loadData("nutrients-cleaned.tsv");
   
    axes = new ArrayList<Axis>();
    
@@ -28,8 +28,12 @@ void setup() {
         Axis axis2 = axes.get(i);
         float xLeft = axis1.xCoordinate;
         float xRight = axis2.xCoordinate;
-        float yLeft = map(item.FloatVars.get(i), 0f, axis1.maxValue, 0f, 0.6*height);
-        float yRight = map(item.FloatVars.get(i+1), 0f, axis2.maxValue, 0f, 0.6*height);
+        //float yLeft = map(item.FloatVars.get(i), 0f, axis1.maxValue, 0f, 0.6*height); // cars
+        //float yRight = map(item.FloatVars.get(i+1), 0f, axis2.maxValue, 0f, 0.6*height);
+        float yLeft = map(item.FloatVars.get(i-1), 0f, axis1.maxValue, 0f, 0.6*height);  // nutrients
+        float yRight = map(item.FloatVars.get(i), 0f, axis2.maxValue, 0f, 0.6*height);
+        stroke(200);
+        strokeWeight(0.4);
         line(xLeft, 0.8*height - yLeft,xRight,0.8*height - yRight);
      }
    }
