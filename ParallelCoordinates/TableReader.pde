@@ -5,26 +5,29 @@
 class TableReader {
   
   ArrayList<Item> loadData() {
-   Table table = loadTable("nutrients-cleaned.tsv", "header");
-   ArrayList<Item> FoodList = new ArrayList<Item>();
+   Table table = loadTable("nutrients-cleaned.tsv");
+   ArrayList<Item> itemList = new ArrayList<Item>();
    ArrayList<String> VariableList = new ArrayList<String>();
-   ArrayList<Float> VarFloatList = new ArrayList<Float>();
+   ArrayList<String> StringVars = new ArrayList<String>();
+   ArrayList<Float> FloatVars = new ArrayList<Float>();
+   TableRow row0 = table.getRow(0);
+       for (int n = 0; n < row0.getColumnCount(); n++) {
+         VariableList.add(row0.getString(n)); //adds variable names to the variableList arrayList
+       }
    TableRow row1 = table.getRow(1);
-       for (int n = 0; n < row1.getColumnCount(); n++) {
-         VariableList.add(row1.getString(n)); //adds variable names to the variableList arrayList
-       }
-   TableRow row2 = table.getRow(2);
-     for (int n = 0; n < row2.getColumnCount(); n++) {
+     for (int n = 2; n < table.getRowCount(); n++) {
+       for (int m = 0; m < VariableList.size(); m++)
+       if (row1.getString(m) == "String") {
+         StringVars.add(table.getRow(n).getString(m));
          
-         
-       }
-       if (row2.getString(n) == "String") {
-         
-         VarStringList.add(table.getRow(1).getString(n));
        } else {
-           VarFloatList.add(table.getRow(1).getFloat(n));          }
-       }
-   return foodList;
+          table.getRow(n).getFloat(m);
+          FloatVars.add(table.getRow(n).getFloat(m));
+         }
+      Item item = new Item(StringVars, FloatVars);
+      itemList.add(item);
+     }
+   return itemList;
    
   }
 }

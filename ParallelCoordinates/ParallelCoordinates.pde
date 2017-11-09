@@ -6,8 +6,7 @@ void setup() {
    pixelDensity(displayDensity());
    TableReader newTable = new TableReader();
    newTable.loadData();
-   String[] nutrientArray = {"protein", "calcium", "sodium", "fiber", "vitaminc", "potassium", "carbohydrate", 
-                            "sugars", "fat", "water", "calories", "saturated", "monounsat", "polyunsat"};
+   
    axes = new ArrayList<Axis>();
    for (int i = 0; i < nutrientArray.length; i++) {
       Axis axis = new Axis(nutrientArray[i], axisX);
@@ -17,7 +16,9 @@ void setup() {
  }
  
  void scaleAxis() {
-   for ()
+   for () {
+   
+   }
  }
  
  void draw() {
