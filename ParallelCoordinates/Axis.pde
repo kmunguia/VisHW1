@@ -8,10 +8,10 @@ class Axis {
   static final int axisTopY = 100;
   static final int axisBottomY = 350;
   int axisX;
-  String nutrient;
+  String varName;
   
-  Axis(String nutrient, int axisX) {
-    this.nutrient = nutrient;
+  Axis(String varName, int axisX) {
+    this.varName = varName;
     this.axisX = axisX;
   }
   
@@ -20,6 +20,6 @@ class Axis {
     strokeWeight(2);
     line(axisX, axisTopY,axisX, axisBottomY);
     fill(axisColor);
-    text(nutrient, axisX-30, axisTopY-10);
+    text(varName, axisX-30, axisTopY-10);
   }
 }
