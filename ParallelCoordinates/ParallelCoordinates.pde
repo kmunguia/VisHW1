@@ -18,9 +18,8 @@ void setup() {
  }
  
  void scaleAxis() {
-   for (ddddddd)
-   for (int i = 0; i < item.FloatVars.size();  {
-   
+   for (int i = 0; i < item.FloatVars.size(); i++  {
+    fddfs
    }
  }
  
