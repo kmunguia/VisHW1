@@ -22,6 +22,8 @@ void setup() {
    for(Axis axis : axes){
      axis.draw();
    }
+   
+   
    for(Item item : itemList) {
      for(int i = 1; i < axes.size(); i++) {
         Axis axis1 = axes.get(i-1);

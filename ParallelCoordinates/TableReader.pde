@@ -16,14 +16,11 @@ class TableReader {
     
     TableRow row0 = table.getRow(0);
     TableRow row1 = table.getRow(1);
-    System.out.println("Populating Types Map...");
-    System.out.println("<Column#: title - type>");
     for (int n = 0; n < row0.getColumnCount(); n++) {
        varList.add(row0.getString(n)); //adds variable names to the variableList arrayList
        System.out.println("Column" + (n + 1) + ": " + row0.getString(n) + " - "  + row1.getString(n));
        maxMap.put(row0.getString(n),0f);
     }
-    //System.out.println("\nPopulating Item List...");
     for (int n = 2; n < table.getRowCount(); n++) {
        ArrayList<String> stringVars = new ArrayList<String>();
        ArrayList<Float> floatVars = new ArrayList<Float>();
@@ -36,7 +33,6 @@ class TableReader {
             Float curr = maxMap.get(row0.getString(m));
             maxMap.put(row0.getString(m), candidate > curr ? candidate : curr);
             floatVars.add(table.getRow(n).getFloat(m));
-            //System.out.print(table.getRow(n).getFloat(m) + " ");
          }
        }
        Item item = new Item(stringVars, floatVars);
