@@ -4,35 +4,26 @@
 
 class TableReader {
   
-  ArrayList<Food> loadData() {
+  ArrayList<Item> loadData() {
    Table table = loadTable("nutrients-cleaned.tsv", "header");
-   ArrayList<Food> foodList = new ArrayList<Food>();
-   ArrayList<String> nutrientList = new ArrayList<String>();
-   
-   for (int i = 0; i < table.getRowCount(); i++) {
-     TableRow row = table.getRow(i);
-     String id = row.getString("id");
-     String name = row.getString("name");
-     String group = row.getString("group");
-     float protein = row.getFloat("protein (g)");
-     float calcium = row.getFloat("calcium (g)");
-     float sodium = row.getFloat("sodium (g)");
-     float fiber = row.getFloat("fiber (g)");
-     float vitaminc = row.getFloat("vitaminc (g)");
-     float potassium = row.getFloat("potassium (g)");
-     float carbohydrate = row.getFloat("carbohydrate (g)");
-     float sugars = row.getFloat("sugars (g)");
-     float fat = row.getFloat("fat (g)");
-     float water = row.getFloat("water (g)");
-     float calories = row.getFloat("calories");
-     float saturated = row.getFloat("saturated (g)");
-     float monounsat = row.getFloat("monounsat (g)");
-     float polyunsat = row.getFloat("polyunsat (g)");
-
-     Food food = new Food(id, name, group, protein, calcium, sodium, fiber, vitaminc, potassium, carbohydrate, sugars, fat, water, calories, saturated, monounsat, polyunsat);
-     foodList.add(food);
-     
-   }
+   ArrayList<Item> FoodList = new ArrayList<Item>();
+   ArrayList<String> VariableList = new ArrayList<String>();
+   ArrayList<Float> VarFloatList = new ArrayList<Float>();
+   TableRow row1 = table.getRow(1);
+       for (int n = 0; n < row1.getColumnCount(); n++) {
+         VariableList.add(row1.getString(n)); //adds variable names to the variableList arrayList
+       }
+   TableRow row2 = table.getRow(2);
+     for (int n = 0; n < row2.getColumnCount(); n++) {
+         
+         
+       }
+       if (row2.getString(n) == "String") {
+         
+         VarStringList.add(table.getRow(1).getString(n));
+       } else {
+           VarFloatList.add(table.getRow(1).getFloat(n));          }
+       }
    return foodList;
    
   }
