@@ -1,3 +1,7 @@
+/**
+ * This class parses the axis
+ */
+
 class Axis {
   final color strokeColor = #A9A9A9;
   float yCoordinateTop = 0.2*height;

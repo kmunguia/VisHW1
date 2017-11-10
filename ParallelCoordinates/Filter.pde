@@ -1,3 +1,7 @@
+/**
+ * This class parses the filter for dataset.
+ */
+
 class Filter{
   int x = 0;
   int y = 0;
