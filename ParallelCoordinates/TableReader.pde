@@ -27,7 +27,6 @@ class TableReader {
        for (int m = 0; m < varList.size(); m++) {
          if (row1.getString(m).trim().equals("String")) {
            stringVars.add(table.getRow(n).getString(m)); 
-           //System.out.print(table.getRow(n).getString(m) + " ");
          } else {
             Float candidate = table.getRow(n).getFloat(m);
             Float curr = maxMap.get(row0.getString(m));
@@ -37,7 +36,6 @@ class TableReader {
        }
        Item item = new Item(stringVars, floatVars);
        itemList.add(item);
-       System.out.println();
      }
      return itemList;
   }

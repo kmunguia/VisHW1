@@ -35,20 +35,20 @@ class Axis {
     mouseDragged();
    }
    
-   float mousePressed() {
-   if (isOver){
+  void mousePressed() {
+   if (isOver && mousePressed){
      locked = true;
       System.out.println("working");
    } else {
       locked = false;
      }
-   float difX = mouseX-xCoordinate-name.length()*2;
-   return difX;
+   float difX = mouseX-(xCoordinate-name.length()*2);
+   //return difX;
   }
   
    void mouseDragged() {
     if(locked) {
-      xCoordinate = mouseX-mousePressed();
+      xCoordinate = mouseX;
     }
    }
 }
