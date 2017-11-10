@@ -24,9 +24,8 @@ class Axis {
     text(name, xCoordinate-name.length()*2, id%2 == 0 ? yCoordinateTop-0.02*height : yCoordinateTop-0.05*height);
     text(maxValue, xCoordinate-name.length()*2, id%2 == 0 ? yCoordinateBottom+0.05*height : yCoordinateBottom+0.02*height);
     
-    if((mouseX > (xCoordinate-name.length()*2)) && (mouseX < (xCoordinate+name.length()*2)) && 
-    (mouseY > (id%2 == 0 ? yCoordinateTop-0.02*height : yCoordinateTop-0.05*height)) && 
-    (mouseY < ((id%2 == 0 ? yCoordinateTop-0.02*height : yCoordinateTop-0.05*height)+15))) {
+    if((mouseX > (xCoordinate-20)) && (mouseX < (xCoordinate+20)) && 
+    (mouseY > (yCoordinateTop - 40)) && (mouseY < yCoordinateTop)) {
       isOver = true;
     } else {
       isOver = false;    
@@ -41,9 +40,7 @@ class Axis {
       System.out.println("working");
    } else {
       locked = false;
-     }
-   float difX = mouseX-(xCoordinate-name.length()*2);
-   //return difX;
+   }
   }
   
    void mouseDragged() {
