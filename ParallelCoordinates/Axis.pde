@@ -21,17 +21,17 @@ class Axis {
     strokeWeight(2);
     line(xCoordinate, yCoordinateTop, xCoordinate, yCoordinateBottom);
     fill(strokeColor);
-    text(name, xCoordinate-name.length()*2, id%2 == 0 ? yCoordinateTop-0.02*height : yCoordinateTop-0.05*height);
-    text(maxValue, xCoordinate-name.length()*2, id%2 == 0 ? yCoordinateBottom+0.05*height : yCoordinateBottom+0.02*height);
+    text(name, xCoordinate-name.length()*2, id%2 == 0 ? yCoordinateTop-0.05*height : yCoordinateTop-0.07*height);
+    text(maxValue, xCoordinate-name.length()*2, id%2 == 0 ? yCoordinateTop-0.02*height : yCoordinateTop-0.04*height);
     
     if((mouseX > (xCoordinate-20)) && (mouseX < (xCoordinate+20)) && 
     (mouseY > (yCoordinateTop - 40)) && (mouseY < yCoordinateTop)) {
       isOver = true;
+      mousePressed();
+      mouseDragged();
     } else {
       isOver = false;    
       }
-    mousePressed();
-    mouseDragged();
    }
    
   void mousePressed() {
