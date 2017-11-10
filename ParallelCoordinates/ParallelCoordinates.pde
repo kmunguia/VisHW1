@@ -23,7 +23,8 @@ void setup() {
    for(Axis axis : axes){
      axis.draw();
    }
-   
+   Filter filter = new Filter();
+   filter.draw();
    
    for(Item item : itemList) {
      for(int i = 1; i < axes.size(); i++) {
