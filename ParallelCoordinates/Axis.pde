@@ -6,8 +6,8 @@ class Axis {
   float xCoordinate;
   int id;
   Float maxValue; 
-  boolean mouseOnAixs;
-  
+  boolean isOver= false;
+  boolean locked = false;
   
   Axis(String name, float xCoordinate, int id, Float maxValue) {
     this.name = name;
@@ -15,17 +15,7 @@ class Axis {
     this.id = id;
     this.maxValue = maxValue;
   }
-  
-  //boolean mouseOnAixs() {
-  //  if (mousePressed == true
-  //  //&& (mouseX < xCoordinate + 20) && (mouseX > xCoordinate -20)
-  //  //&& (mouseY < yCoordinateBottom) && (mouseY > yCoordinateTop)
-  //  ) {
-  //  mouseOnAixs = true;
-  //  }
-    
-    //return mouseOnAixs;
-  //}
+
   void draw() {
     stroke(strokeColor);
     strokeWeight(2);
@@ -33,26 +23,32 @@ class Axis {
     fill(strokeColor);
     text(name, xCoordinate-name.length()*2, id%2 == 0 ? yCoordinateTop-0.02*height : yCoordinateTop-0.05*height);
     text(maxValue, xCoordinate-name.length()*2, id%2 == 0 ? yCoordinateBottom+0.05*height : yCoordinateBottom+0.02*height);
-      
+    
+    if((mouseX > (xCoordinate-name.length()*2)) && (mouseX < (xCoordinate+name.length()*2)) && 
+    (mouseY > (id%2 == 0 ? yCoordinateTop-0.02*height : yCoordinateTop-0.05*height)) && 
+    (mouseY < ((id%2 == 0 ? yCoordinateTop-0.02*height : yCoordinateTop-0.05*height)+15))) {
+      isOver = true;
+    } else {
+      isOver = false;    
+      }
+    mousePressed();
+    mouseDragged();
    }
    
-   void mouseDragged() {
-     
-     if ((mouseX > xCoordinate-20) &&
-    (mouseX < xCoordinate+20) && (mouseY < yCoordinateBottom) && (mouseY > yCoordinateTop)) {
-     //move the axis to 
-    
-      
-    println("yay!");
-    } 
-   }
-  //void update() {
-  // while ((mousePressed == true) && (mouseX > xCoordinate-20) &&
-  //  (mouseX < xCoordinate+20) && (mouseY < yCoordinateBottom) && (mouseY > yCoordinateTop)) {
-  //   //move the axis to 
-    
-      
-  //  println("yay!");
-  //  } 
-}
+   float mousePressed() {
+   if (isOver){
+     locked = true;
+      System.out.println("working");
+   } else {
+      locked = false;
+     }
+   float difX = mouseX-xCoordinate-name.length()*2;
+   return difX;
+  }
   
+   void mouseDragged() {
+    if(locked) {
+      xCoordinate = mouseX-mousePressed();
+    }
+   }
+}
