@@ -2,7 +2,6 @@ ArrayList<Axis> axes;
 ArrayList<Item> itemList;
 TableReader data;
 
-
 void setup() {
   size(1400, 800);
   pixelDensity(displayDensity());
@@ -11,8 +10,8 @@ void setup() {
   
    axes = new ArrayList<Axis>();
    
-   for (int i = 2; i < data.varList.size(); i++) {
-      float pos = ((float)(i-2)/((float)data.varList.size()-3f))*0.8*width + 0.1*width;
+   for (int i = 1; i < data.varList.size(); i++) {
+      float pos = ((float)(i-2)/((float)data.varList.size()-3f))*0.6*width + 0.2*width;
       Axis axis = new Axis(data.varList.get(i), pos, i, data.maxMap.get(data.varList.get(i)));
       axes.add(axis);
    }                
@@ -32,9 +31,7 @@ void setup() {
         Axis axis2 = axes.get(i);
         float xLeft = axis1.xCoordinate;
         float xRight = axis2.xCoordinate;
-        //float yLeft = map(item.FloatVars.get(i), 0f, axis1.maxValue, 0f, 0.6*height); // cars
-        //float yRight = map(item.FloatVars.get(i+1), 0f, axis2.maxValue, 0f, 0.6*height);
-        float yLeft = map(item.FloatVars.get(i-1), 0f, axis1.maxValue, 0f, 0.6*height);  // nutrients
+        float yLeft = map(item.FloatVars.get(i-1), 0f, axis1.maxValue, 0f, 0.6*height); // cars
         float yRight = map(item.FloatVars.get(i), 0f, axis2.maxValue, 0f, 0.6*height);
         stroke(200);
         strokeWeight(0.4);
