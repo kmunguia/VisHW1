@@ -19,13 +19,13 @@ So our interactivity that we implemented was making of rectangles on the screen 
 
 ### Moving axis 
 
-So you can moves the axis by clicking on the label on top of it, so the name, and then dragging it iether left or right. There is a late response to this so it may take a little bit before you see any changes. Even though we can move it, we cannot switch the axis with one another. All you an do is make the gap between different axes larger or smaller.  If we had more time we would make response time quicker and allow for the axis to be switched with eachother. We thought that it was important that our vis allowed. 
+So you can move the axis by clicking right under the number label on top of the axis you want to move, and then dragging it either left or right. There is a late response to this so it may take a little bit before you see any changes. Even though we can move it, we cannot switch the axis with one another. All you an do is make the gap between different axes bigger or smaller.  If we had more time we would make response time quicker and allow for the axis to be switched with eachother. We thought that it was important that our vis allowed. 
 
 ### "Filtering"
 
 There are two parts to the filtering interaction. One is making the actual rectangle on an axes that will filter the data that and two, making sure that the data adjusts to the area od the rectangle and only shows items that pass through the rectangle. We were able to accomplish the first part of this interaction. 
 
-If we had more time, we would be able to make sure that you couldn't draw a rectangle on the just any part of the screen and that the data would adjust to be filtered through the area of the rectangle. 
+If we had more time, we would be able to make sure that you couldn't draw a rectangle on the just any part of the screen and that the data would adjust to be filtered through the area of the rectangle.We are able to show the rectangle draw and then it disappears so we would work on keeping the rectangle staying on the canvas.  
 
 
 
