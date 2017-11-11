@@ -12,7 +12,7 @@ We knew the requirements were that we had to make the axis move and be able to f
 ## Interactivity
 
 
-So our interactivity that we implemented was making of rectangles on the screen and being able to move the axis. We were not able to have both of them work at the same time but were able to have them work differently. 
+So our interactivity that we implemented was making of rectangles on the screen and being able to move the axis. We were not able to have both of them work at the same time but were able to have them work differently. Our program works best with the cars data.
 
 ### Moving axis 
 
