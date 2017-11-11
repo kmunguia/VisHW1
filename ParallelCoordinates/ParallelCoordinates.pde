@@ -1,12 +1,15 @@
 ArrayList<Axis> axes;
 ArrayList<Item> itemList;
 TableReader data;
-
+int x = 0;
+int y = 0;
+int newX = 0;
+int newY = 0;
 void setup() {
   size(1400, 800);
   pixelDensity(displayDensity());
   data = new TableReader();
-  itemList = data.loadData("nutrients-cleaned.tsv");
+  itemList = data.loadData("cars-cleaned.tsv");
   
    axes = new ArrayList<Axis>();
    
@@ -45,3 +48,19 @@ void setup() {
      }
    }
  }
+   void mousePressed() {
+      x = mouseX;
+      y = mouseY;
+  }
+
+
+  void mouseDragged() {
+    newX = mouseX-x;
+    newY = mouseY-y;
+  
+    noFill();
+    stroke(255,0,0);
+    strokeWeight(2);
+    rect(x, y, newX, newY);
+    }
+   
